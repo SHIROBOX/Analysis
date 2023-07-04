@@ -3,6 +3,7 @@ package com.mycompany.analysis.service;
 import com.mycompany.analysis.service.impl.AnalysisScoreServiceImpl;
 import com.mycompany.generater.model.Student;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import org.junit.Test;
@@ -30,7 +31,6 @@ public class AnalysisScoreServiceT {
         // students.add(new Student("0010", 0));
         Map<String, String> score = analysisScoreService.analyzeScore(students);
         System.out.println(score);
-        // Assertions.assertThat(score.get("A")).isEqualTo(5);
     }
 
 }

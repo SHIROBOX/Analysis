@@ -20,6 +20,11 @@ public class AnalysisScoreServiceImpl implements AnalysisScoreService {
     @Override
     public Map<String, String> analyzeScore(List<Student> students) {
         Map<String, String> result = new HashMap<>();
+        result.put("A", "0.00%");
+        result.put("B", "0.00%");
+        result.put("C", "0.00%");
+        result.put("D", "0.00%");
+        result.put("F", "0.00%");
         Map<String, Long> groupGrades = groupGradeService.groupingGrade(students);
         for (Map.Entry<String, Long> groupGrade : groupGrades.entrySet()) {
             result.put(groupGrade.getKey(), PercentUtils.calculateToPercent(BigDecimal.valueOf(groupGrade.getValue()), BigDecimal.valueOf(students.size())));
