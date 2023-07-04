@@ -18,8 +18,11 @@ public class Analysis {
         StudentService studentService = new StudentServiceImpl();
         List<Student> students = studentService.generateStudent();
         AnalysisScoreService analysisScoreService = new AnalysisScoreServiceImpl();
-        Map<String, String> result = analysisScoreService.analyzeScore(students);
-        System.out.println(result);
+        Map<String, String> results = analysisScoreService.analyzeScore(students);
+        System.out.println("Amount Student : " + students.size());
+        for (Map.Entry<String, String> result : results.entrySet()) {
+            System.out.println(result.getKey() + " = " + result.getValue());
+        }
 
     }
 }
